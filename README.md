@@ -2,6 +2,12 @@
 
 SlideForge 會讀取 PowerPoint speaker notes，使用 Edge TTS 產生旁白，再把投影片、音訊與字幕合成 MP4。建議用 YAML 管理專案設定，再用 CLI 參數做臨時覆蓋。
 
+## Demo
+
+這支影片是使用 SlideForge 產生的輸出範例：
+
+[Watch the SlideForge demo on YouTube](https://youtu.be/YZXfiuHfQug)
+
 ## 需求
 
 - Windows
