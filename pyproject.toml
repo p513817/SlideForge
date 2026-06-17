@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slideforge"
+version = "0.1.0"
+description = "Convert PowerPoint speaker notes into narrated videos with Edge TTS."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  { name = "SlideForge Contributors" }
+]
+keywords = ["powerpoint", "pptx", "video", "tts", "subtitles", "edge-tts"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Office/Business :: Office Suites",
+]
+dependencies = [
+  "edge-tts>=7.0.0",
+  "python-pptx>=1.0.0",
+  "PyYAML>=6.0.0",
+  "pywin32>=306; platform_system == 'Windows'",
+]
+
+[project.scripts]
+slideforge = "slideforge.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

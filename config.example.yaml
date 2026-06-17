@@ -1,0 +1,39 @@
+# SlideForge config
+input:
+  pptx: "D:/path/to/your/slides.pptx"
+
+output:
+  video: "output/output.mp4"
+  subtitled_video: "output/output_subtitled.mp4"
+  temp_dir: "output/.slideforge"
+  width: 1920
+  height: 1080
+
+tts:
+  voice: "zh-TW-HsiaoYuNeural"
+  rate: "+55%"
+
+timing:
+  pause_between_slides: 0.5
+  empty_slide_duration: 1.0
+  initial_narration_delay: 0.0
+
+subtitles:
+  enabled: true
+  only: false
+  require_precise_timing: true
+  line_chars: 28
+  max_lines: 2
+  min_chars: 14
+  min_duration: 1.0
+  max_duration: 4.0
+  font_name: "Microsoft JhengHei"
+  fonts_dir: "C:/Windows/Fonts"
+  font_size: 12
+  primary_colour: "&H00FFFFFF"
+  outline_colour: "&H00000000"
+  border_style: 1
+  outline: 1
+  shadow: 1
+  alignment: 2
+  margin_v: 10
