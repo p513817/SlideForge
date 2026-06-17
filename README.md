@@ -2,6 +2,31 @@
 
 SlideForge 會讀取 PowerPoint speaker notes，使用 Edge TTS 產生旁白，再把投影片、音訊與字幕合成 MP4。建議用 YAML 管理專案設定，再用 CLI 參數做臨時覆蓋。
 
+## ✨ 特色功能
+
+> 從一份簡報，鍛造成一支有旁白、有字幕、可直接分享的影片。
+
+```text
+PowerPoint notes 📝
+        ↓
+Edge TTS 旁白 🎙️
+        ↓
+投影片影像 + 音訊 + 字幕 🎬
+        ↓
+MP4 成品 🚀
+```
+
+| 功能 | 可以做什麼 |
+| --- | --- |
+| 📝 讀取 speaker notes | 把每張投影片的備忘稿當成旁白腳本，不必另外維護文字檔。 |
+| 🎙️ Edge TTS 產生旁白 | 可指定語音與語速，例如 `zh-TW-HsiaoYuNeural` 搭配 `+20%` 或 `+55%`。 |
+| 🎬 自動合成 MP4 | 將投影片圖片、旁白音訊與停頓時間串成完整影片。 |
+| 💬 燒錄字幕 | 依旁白產生 SRT，並用 FFmpeg/libass 燒進影片。 |
+| 🎯 精準字幕時間軸 | 優先使用 Edge TTS word-boundary metadata，讓字幕更貼近實際語音。 |
+| ⚙️ YAML 優先設定 | 專案設定集中在 `config.yaml`，臨時調整再用 CLI 覆蓋。 |
+| ♻️ 字幕快速重做 | `--subtitles-only` 可利用既有暫存檔重做字幕樣式，不必重新產生整支影片。 |
+| 🩺 環境健檢 | `slideforge --doctor` 會檢查 FFmpeg、ffprobe 與 PowerPoint COM 是否可用。 |
+
 ## Demo
 
 這支影片是使用 SlideForge 產生的輸出範例：
@@ -246,6 +271,10 @@ README.md
 ```
 
 `app.py` 負責主要流程。`cli.py` 負責命令列介面。`settings.py` 負責預設值、YAML 讀取與 CLI 覆蓋。`environment.py` 負責檢查 FFmpeg、ffprobe 與 PowerPoint COM。其餘模組分別處理音訊、影片、PowerPoint 匯出、字幕與 runtime state。
+
+## 致謝
+
+感謝 summer51202@gmail.com 提供第一個版本。
 
 ## 發佈到 PyPI
 
